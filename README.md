@@ -73,7 +73,7 @@ while True:
 
 In this code, we first create a **`PGQ`** object with the necessary database connection parameters. We then connect to the database and enter a loop where we process messages from the queue.
 
-For a more detailed usage guide, please check out the [Usage Guide](contact) in our wiki.
+For a more detailed usage guide, please check out the [Usage Guide](https://github.com/over-engineers/pgqmini/wiki/PGQ-Class-Documentation) in our wiki.
 
 
 ## **License**
