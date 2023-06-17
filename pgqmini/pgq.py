@@ -1,7 +1,6 @@
 from dataclasses import dataclass, asdict
 import select
 from typing import Any, Callable
-import logging
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 import psycopg2
 
@@ -61,7 +60,6 @@ class PGQ:
     def __init__(self, host, user, password, port, dbname="pgq", qname="message_queue"):
         """
         The constructor of the PGQ class. It sets up the necessary variables to establish a connection to a PostgreSQL database.
-        It also sets up a logger for logging purposes.
 
         :param host: The hostname of the database server.
         :param user: The username to connect to the database.
@@ -70,7 +68,6 @@ class PGQ:
         :param dbname: The name of the database. Defaults to 'pgq'.
         :param qname: The name of the queue. Defaults to 'message_queue'.
         """
-        self.logger = logging.getLogger(__name__)
 
         self.qinfo = QueueInfo(host, user, password, port, dbname, qname)
 
