@@ -1,6 +1,6 @@
 # **pgqmini**
 
-![version](https://img.shields.io/badge/version-0.0.4-blue)
+![version](https://img.shields.io/badge/version-0.0.6-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
 
 pgqmini is a lightweight, easy-to-use Python library for managing PostgreSQL message queues. It provides a simple interface for adding and retrieving messages from a PostgreSQL-based queue, as well as handling timeouts and managing message processing.
