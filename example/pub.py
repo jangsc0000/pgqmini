@@ -2,18 +2,18 @@
 from pgqmini import PGQ
 
 # Create an instance of the PGQ class
-# qname: the name of the queue
-# dbname: the name of the database
-# host: the host address of the PostgreSQL server
-# user: the username to connect to the PostgreSQL server
-# password: the password to connect to the PostgreSQL server
-# port: the port number of the PostgreSQL server
 pgq = PGQ(
+    # qname: the name of the queue
     qname="message_queue",
+    # dbname: the name of the database
     dbname="pgq",
+    # host: the host address of the PostgreSQL server
     host="127.0.0.1",
+    # user: the username to connect to the PostgreSQL server
     user="username",
+    # password: the password to connect to the PostgreSQL server
     password="password",
+    # port: the port number of the PostgreSQL server
     port=5432,
 )
 
@@ -22,7 +22,7 @@ pgq.connect()
 
 # Publish a message to the queue
 # The message is a JSON string
-pgq.pub_message('{"key1": "value1", "key2": "value2"}')
+pgq.pub('{"key1": "value1", "key2": "value2"}')
 
 # Disconnect from the PostgreSQL server
 pgq.disconnect()

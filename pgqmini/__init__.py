@@ -1,3 +1,3 @@
-from .pgq import PGQ, Message
+from .pgq import PGQ
 
-__all__ = ["PGQ", "Message"]
+__all__ = ["PGQ"]

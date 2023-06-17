@@ -1,6 +1,6 @@
 # **pgqmini**
 
-![version](https://img.shields.io/badge/version-0.0.3-blue)
+![version](https://img.shields.io/badge/version-0.0.4-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
 
 pgqmini is a lightweight, easy-to-use Python library for managing PostgreSQL message queues. It provides a simple interface for adding and retrieving messages from a PostgreSQL-based queue, as well as handling timeouts and managing message processing.
@@ -42,7 +42,7 @@ pgq = PGQ(
 
 pgq.connect()
 
-pgq.pub_message('{"key1": "value1", "key2": "value2"}')
+pgq.pub('{"key1": "value1", "key2": "value2"}')
 
 pgq.disconnect()
 ```
@@ -62,13 +62,11 @@ pgq = PGQ(
 
 pgq.connect()
 
+def process_message(payload: str):
+    print(payload)
+
 while True:
-    try:
-        msg = pgq.sub_message()
-        process_message(msg)
-        pgq.complete_message(msg)
-    except Exception as e:
-        pgq.rollback_message(msg)
+    pgq.sub(process_message)
 ```
 
 In this code, we first create a **`PGQ`** object with the necessary database connection parameters. We then connect to the database and enter a loop where we process messages from the queue.
